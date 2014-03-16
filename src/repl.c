@@ -1,4 +1,3 @@
-
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -218,7 +217,10 @@ main(int argc, char **argv) {
   // repl
   while ((line = linenoise("sophia> "))) {
     // empty line: noop
-    if ('\0' == line[0]) continue;
+    if ('\0' == line[0]) {
+      free(line);
+      continue;
+    }
 
     if (0 == strncmp("help", line, 4)) {
       emitter_emit(emitter, "help", NULL);
