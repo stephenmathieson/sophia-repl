@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "linenoise": "*",
-    "stephenmathieson/substr.c": "*"
+    "stephenmathieson/substr.c": "*",
+    "stephenmathieson/emitter.c": "*"
   }
 }
