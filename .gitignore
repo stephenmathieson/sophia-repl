@@ -1,0 +1,5 @@
+deps
+*.o
+testdb
+.sprepl_history
+repl

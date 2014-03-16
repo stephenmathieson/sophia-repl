@@ -1,0 +1,8 @@
+{
+  "name": "sophia-repl",
+  "version": "0.0.0",
+  "dependencies": {
+    "linenoise": "*",
+    "stephenmathieson/substr.c": "*"
+  }
+}
