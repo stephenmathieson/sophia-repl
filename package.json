@@ -4,6 +4,6 @@
   "dependencies": {
     "linenoise": "*",
     "stephenmathieson/substr.c": "*",
-    "stephenmathieson/emitter.c": "*"
+    "stephenmathieson/emitter.c": "0.1.0"
   }
 }
