@@ -1,20 +1,29 @@
 
+BIN ?= sophia
+PREFIX ?= /usr/local
 CC ?= gcc
 VALGRIND ?= valgrind
-SRC = $(wildcard src/*.c)
+SRC = repl.c
 DEPS = $(wildcard deps/*/*.c)
 OBJS = $(SRC:.c=.o) $(DEPS:.c=.o)
-CFLAGS = -Wall -Wextra -Ideps -Isrc
+CFLAGS = -Wall -Wextra -Ideps
 VALGRIND_OPTS ?= --leak-check=full
 LDFLAGS = -lsophia
 
-repl: $(OBJS)
+$(BIN): $(OBJS)
 	$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS)
 
 %.o: %.c
 	$(CC) $< -c -o $@ $(CFLAGS)
 
-clean:
-	rm -f example repl $(OBJS)
+install: $(BIN)
+	mkdir -p $(PREFIX)/bin
+	cp -f $(BIN) $(PREFIX)/bin/
 
-.PHONY: clean
+uninstall:
+	rm -f $(PREFIX)/bin/$(BIN)
+
+clean:
+	rm -f example $(BIN) $(OBJS)
+
+.PHONY: clean install uninstall
