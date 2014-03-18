@@ -45,7 +45,7 @@ static emitter_t *emitter = NULL;
 static char *database_path = ".";
 
 /**
- * Pre-declair command callbacks.
+ * Predeclare command callbacks.
  */
 
 static void on_help(void *);
